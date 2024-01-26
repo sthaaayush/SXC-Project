@@ -55,9 +55,13 @@ public class login_register_handler extends HttpServlet {
                         int update_flag = signUp_statement.executeUpdate();
                         //checking if row is updated by data or not
                         if (update_flag != 0) {
-                            out.println(update_flag + "Rows affected");
+                            out.println("Registered Sucessfully");
+                            RequestDispatcher dispatch = request.getRequestDispatcher("index.html");
+                            dispatch.forward(request, response);
                         } else {
-                            out.println("NO row updated");
+                            out.println("Error Occured");
+                            RequestDispatcher dispatch = request.getRequestDispatcher("LogMap");
+                            dispatch.forward(request, response);
                         }
                     } //Handle request if its for login or signIn
                     else {
