@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
     <welcome-file-list>
         <welcome-file>
             login.html
         </welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>log</servlet-name>
+        <servlet-class>login_handler.login_register_handler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>log</servlet-name>
+        <url-pattern>/LogMap</url-pattern>
+    </servlet-mapping>
 </web-app>
